@@ -1,8 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
+
 
 function Nav() {
   return (
+
+    // Nav componenet for default topics
     <nav className="main-nav">
         <ul>
           <li><NavLink to='/cats'>Cats</NavLink></li>
@@ -14,3 +17,4 @@ function Nav() {
 }
 
 export default Nav
+

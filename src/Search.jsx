@@ -1,8 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router';
 
-function Search() {
+function Search({fetchData}) {
+    const navigate =  useNavigate();
+
+    //  handler that is triggered when the form is being submitted
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        fetchData(event.target.search.value);
+        navigate(`/search/${event.target.search.value}`)
+    }
   return (
-    <form className="search-form">
+    <form className="search-form" onSubmit={handleSubmit}>
         <input type="search" name="search" placeholder="Search" required/>
         <button type="submit" className="search-button">
           <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
